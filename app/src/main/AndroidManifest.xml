@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.softvilla.parentalapp">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <meta-data
+            android:name="DATABASE"
+            android:value="sugar_example.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.softvilla.parentalapp" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCIlsAFrduvbkx5-RvcOpdbliyAtb6JHmA" />
+
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".LogIn"
+            android:label="Log In"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".ChildrenList"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".MainManu"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".ApplyPin"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".Messages"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".CallLogs"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".CurrentLocation"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".SetPin"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".Splash"
+            android:theme="@style/CustomTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Gallery" />
+        <activity
+            android:name=".BatteryInfo"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".AppInfo"
+            android:theme="@style/CustomTheme" />
+        <activity android:name=".AppUsage">
+
+        </activity>
+
+        <service
+            android:name=".CheckForeGroundApp"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":ServiceProcess" />
+    </application>
+
+</manifest>
